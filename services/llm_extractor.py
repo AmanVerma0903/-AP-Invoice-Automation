@@ -67,6 +67,15 @@ def extract_with_gemini(raw_text: str) -> Tuple[Optional[ExtractedInvoice], Opti
     Returns: (ExtractedInvoice or None, failure_warning_or_None)
     """
     api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        try:
+            import streamlit as st
+            api_key = str(st.secrets.get("GEMINI_API_KEY", "")).strip()
+            if api_key:
+                os.environ["GEMINI_API_KEY"] = api_key
+        except Exception:
+            pass
+
     if not api_key or api_key.startswith("your-") or "placeholder" in api_key.lower():
         # Mode B: Key not configured -> clean silent offline fallback
         return None, None

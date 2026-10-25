@@ -13,6 +13,15 @@ from dotenv import load_dotenv
 # Load server-side environment variables from .env
 load_dotenv(override=True)
 
+# Automatically bridge Streamlit Cloud Secrets into environment variables
+try:
+    if hasattr(st, "secrets"):
+        for _k in ["GEMINI_API_KEY", "GEMINI_MODEL", "MAX_TOLERANCE_USD", "MAX_TOLERANCE_PERCENTAGE"]:
+            if _k in st.secrets and not os.getenv(_k):
+                os.environ[_k] = str(st.secrets[_k]).strip()
+except Exception:
+    pass
+
 # Core database and models
 from database.db import (
     init_db,
