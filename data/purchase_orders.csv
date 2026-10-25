@@ -1,0 +1,6 @@
+po_number,vendor_id,total_amount,remaining_balance,currency,status,issue_date,line_items_json
+PO-2026-101,VEND-001,5000.00,5000.00,USD,OPEN,2026-01-15,"[{""description"": ""Managed Cloud Hosting Tier 3"", ""quantity"": 1, ""unit_price"": 4500.00, ""amount"": 4500.00}, {""description"": ""Standard Support Package"", ""quantity"": 1, ""unit_price"": 500.00, ""amount"": 500.00}]"
+PO-2026-102,VEND-002,12500.00,12500.00,USD,OPEN,2026-01-20,"[{""description"": ""Server Rack Hardware Delivery"", ""quantity"": 2, ""unit_price"": 5000.00, ""amount"": 10000.00}, {""description"": ""Network Switch Installation"", ""quantity"": 1, ""unit_price"": 2500.00, ""amount"": 2500.00}]"
+PO-2026-103,VEND-003,8400.00,8400.00,USD,OPEN,2026-02-01,"[{""description"": ""Q1 Freight Shipping Services"", ""quantity"": 4, ""unit_price"": 2100.00, ""amount"": 8400.00}]"
+PO-2026-104,VEND-006,15000.00,15000.00,EUR,OPEN,2026-02-10,"[{""description"": ""European GDPR Advisory Retainer"", ""quantity"": 1, ""unit_price"": 15000.00, ""amount"": 15000.00}]"
+PO-2026-105,VEND-005,3200.00,3200.00,USD,CANCELLED,2026-01-05,"[{""description"": ""Unverified Office Supplies"", ""quantity"": 1, ""unit_price"": 3200.00, ""amount"": 3200.00}]"

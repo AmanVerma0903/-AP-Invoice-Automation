@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Secrets and environment variables
+.env
+
+# SQLite Databases and Scratch
+*.db
+*.sqlite3
+zamp_ap.db
+pdf_text_dump.txt
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit Local Cache
+.streamlit/secrets.toml
+
+# IDE
+.vscode/
+.idea/
+*.swp

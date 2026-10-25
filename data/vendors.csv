@@ -1,0 +1,7 @@
+vendor_id,name,normalized_name,tax_id,approval_status,currency,contact_email
+VEND-001,Apex Cloud Solutions LLC,apex cloud solutions,84-1234567,APPROVED,USD,billing@apexcloud.io
+VEND-002,Datacore Infrastructure Inc.,datacore infrastructure,77-9876543,APPROVED,USD,ap@datacore.net
+VEND-003,Global Logistics Partners,global logistics partners,33-4567890,APPROVED,USD,invoices@globallogistics.com
+VEND-004,Vanguard Cyber Defense Ltd,vanguard cyber defense,55-6789012,PENDING_REVIEW,USD,finance@vanguardcyber.co
+VEND-005,Blacklisted Supply Co.,blacklisted supply,99-0001112,BLOCKED,USD,accounts@blacklisted.org
+VEND-006,EuroTech Consulting SAS,eurotech consulting,FR-44889900,APPROVED,EUR,facturation@eurotech.fr
