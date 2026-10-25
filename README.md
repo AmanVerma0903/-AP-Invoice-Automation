@@ -318,24 +318,3 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 🎥 5-Minute Demo Walkthrough Script
-
-Use this sequence for recording the 5-minute Loom demo or live interview presentation:
-
-* **0:00 – 1:00 (Problem Context & Happy Path):**
-  * Introduce Problem Statement 1 (mid-market AP processing challenges).
-  * Load `01_happy_path_apex.pdf`.
-  * Highlight the **7-stage execution stepper**, PO match with `PO-2026-101`, and **`Eligible for Approval`** auto-pass disposition.
-  * Show PO balance drop from $5,000 to $0.00 (`CLOSED`).
-* **1:00 – 2:00 (Edge Case 1: Duplicate Prevention):**
-  * Load `02_duplicate_resubmission_glp_renamed.pdf`.
-  * Show how the system detects the duplicate via SHA-256 and `(vendor, invoice_number)` fingerprinting, placing it **`On Hold`** and protecting the cash balance.
-* **2:00 – 3:00 (Edge Case 2 & 3: Split PO & Tolerance Discrepancy):**
-  * Run milestone invoice `03c_split_po_overdraft_datacore.pdf` to show cumulative overdraft detection (**`Manual Review`**).
-  * Run `04b_exceeds_tolerance_apex.pdf` to demonstrate how the $450 variance (+9.0%) exceeds the $\min(\$50, 2\%)$ tolerance threshold.
-* **3:00 – 4:00 (Real-World Multi-Document Invoice):**
-  * Upload a real 2-page e-commerce invoice (e.g. Flipkart).
-  * Show multi-document boundary detection separating Page 1 (Shreyash Retail ₹247) and Page 2 (Flipkart Internet ₹10), isolating unapproved vendor onboarding.
-* **4:00 – 5:00 (Dashboard & Human-in-the-Loop Actions):**
-  * Demonstrate Reviewer Actions: **`Override & Authorize`**, **`Vendor Discrepancy Notice`**, and **`Reject Invoice`** (showing PO balance restoration).
-  * Tour Tab 2 (**AP Dashboard**) and Tab 3 (**Historical Audit Ledger**).
