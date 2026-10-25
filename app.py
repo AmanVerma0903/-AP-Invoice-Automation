@@ -13,15 +13,6 @@ from dotenv import load_dotenv
 # Load server-side environment variables from .env
 load_dotenv(override=True)
 
-# Automatically bridge Streamlit Cloud Secrets into environment variables
-try:
-    if hasattr(st, "secrets"):
-        for _k in ["GEMINI_API_KEY", "GEMINI_MODEL", "MAX_TOLERANCE_USD", "MAX_TOLERANCE_PERCENTAGE"]:
-            if _k in st.secrets and not os.getenv(_k):
-                os.environ[_k] = str(st.secrets[_k]).strip()
-except Exception:
-    pass
-
 # Core database and models
 from database.db import (
     init_db,
@@ -230,7 +221,25 @@ st.sidebar.markdown("### ⚙️ System Controls")
 
 # Server-side Gemini Configuration Detection (Zero UI API Key entry)
 gemini_key = os.getenv("GEMINI_API_KEY", "").strip()
-gemini_model = os.getenv("GEMINI_MODEL", "gemini-3.5-flash").strip() or "gemini-3.5-flash"
+if not gemini_key:
+    try:
+        gemini_key = str(st.secrets.get("GEMINI_API_KEY", "")).strip()
+        if gemini_key:
+            os.environ["GEMINI_API_KEY"] = gemini_key
+    except Exception:
+        pass
+
+gemini_model = os.getenv("GEMINI_MODEL", "").strip()
+if not gemini_model:
+    try:
+        gemini_model = str(st.secrets.get("GEMINI_MODEL", "gemini-3.5-flash")).strip()
+        if gemini_model:
+            os.environ["GEMINI_MODEL"] = gemini_model
+    except Exception:
+        gemini_model = "gemini-3.5-flash"
+if not gemini_model:
+    gemini_model = "gemini-3.5-flash"
+
 has_gemini = bool(gemini_key and not gemini_key.startswith("your-") and len(gemini_key) > 10)
 
 # Interactive Gemini AI Mode Toggle
